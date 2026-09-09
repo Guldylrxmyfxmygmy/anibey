@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: anibey-libro
+    runtime: node
+    buildCommand: npm install
+    startCommand: npm start
+    healthCheckPath: /
+    envVars:
+      - key: GROQ_API_KEY
+        sync: false

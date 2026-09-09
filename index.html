@@ -1,0 +1,104 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>El Libro de Anibey Castillo</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <div class="estrellas" aria-hidden="true"></div>
+
+    <main class="contenedor">
+
+        <h1>👑 El Librito de mi princesaaa 👑</h1>
+        <p class="subtitulo">✨ Donde comienzan sus historias ✨</p>
+
+        <div class="libro cerrado" id="libro" aria-label="Libro de Anibey cerrado">
+
+            <div class="portada-libro">
+                <div class="portada-decoracion" aria-hidden="true">🌹</div>
+                <p class="portada-etiqueta">El diario mágico de</p>
+                <h2>Anibey</h2>
+                <div class="portada-corona" aria-hidden="true">👑</div>
+                <p class="narracion-libro" aria-hidden="true">Érase una vez...</p>
+                <button type="button" id="abrirLibro" class="boton-abrir-libro">Abrir el libro <span aria-hidden="true">✦</span></button>
+            </div>
+
+            <!-- Página izquierda -->
+            <section class="pagina izquierda">
+                <div class="decoracion">🌹</div>
+
+                <h2>Mi libro mágico</h2>
+
+                <p>
+                    Este es el lugar de Anibey.
+                    Aquí puede escribir sus pensamientos,
+                    historias, sueños, secretos y todo lo que quiera.
+                </p>
+
+                <div class="corona">👑</div>
+            </section>
+
+            <!-- Página derecha -->
+            <section class="pagina derecha">
+
+                <div class="encabezado">
+                    <span>📖 Página</span>
+                    <span id="numeroPagina">1</span>
+                </div>
+
+                <textarea
+                    id="texto"
+                    placeholder="Escribe aquí lo que quieras, princesa... ✨"
+                ></textarea>
+
+                <div class="botones">
+                    <button type="button" onclick="paginaAnterior()">⬅ Anterior</button>
+                    <button type="button" onclick="guardar()">💾 Guardar</button>
+                    <button type="button" onclick="paginaSiguiente()">Siguiente ➡</button>
+                </div>
+
+            </section>
+
+        </div>
+
+        <p id="mensaje"></p>
+
+    </main>
+
+    <button type="button" class="boton-chat" id="botonChat" aria-label="Abrir chat con Anibey" aria-expanded="false">
+        <span aria-hidden="true">🌙</span>
+        <span class="punto-chat" aria-hidden="true"></span>
+    </button>
+
+    <aside class="chat-flotante" id="chatFlotante" aria-labelledby="tituloChat" hidden>
+        <div class="chat-cabecera">
+            <div class="chat-identidad">
+                <div class="chat-avatar" aria-hidden="true">✨</div>
+                <div>
+                    <p class="etiqueta">Compañera de Anibey</p>
+                    <h2 id="tituloChat">Estoy leyendo</h2>
+                </div>
+            </div>
+            <button type="button" class="cerrar-chat" id="cerrarChat" aria-label="Cerrar chat">×</button>
+        </div>
+        <div class="chat-mensajes" id="chatMensajes" aria-live="polite" aria-label="Conversación con la asistente">
+            <div class="burbuja burbuja-ia">Hola, Anibey. Escribe en tu página y te iré acompañando aquí. 🌙</div>
+        </div>
+        <div class="acciones-animo" role="group" aria-label="Acciones para sentirte mejor">
+            <button type="button" class="boton-suave" onclick="respirar()">🌿 Respirar</button>
+            <button type="button" class="boton-suave" onclick="nuevoComienzo()">✨ Nuevo comienzo</button>
+        </div>
+        <form class="chat-formulario" id="chatFormulario">
+            <label class="solo-lectura" for="mensajeChat">Escribe un mensaje para Anibey</label>
+            <input id="mensajeChat" name="mensajeChat" type="text" autocomplete="off" placeholder="Escribe aquí a Anibey..." maxlength="500">
+            <button type="submit" class="boton-enviar" aria-label="Enviar mensaje">➤</button>
+        </form>
+    </aside>
+
+    <script src="script.js"></script>
+</body>
+</html>
